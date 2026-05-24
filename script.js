@@ -4,7 +4,7 @@ let claseSeleccionada = "";
 let ipValidada = false;
 
 const rangos = {
-  A: { min: 0, max: 127, inicial: "0.0.0.0", final: "127.255.255.255", mascara: "255.0.0.0" },
+  A: { min: 1, max: 127, inicial: "0.0.0.0", final: "127.255.255.255", mascara: "255.0.0.0" },
   B: { min: 128, max: 191, inicial: "128.0.0.0", final: "191.255.255.255", mascara: "255.255.0.0" },
   C: { min: 192, max: 223, inicial: "192.0.0.0", final: "223.255.255.255", mascara: "255.255.255.0" }
 };
