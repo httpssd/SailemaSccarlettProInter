@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generador de Subredes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="encabezado">
+      <div>
+        <p class="etiqueta">Proyecto de Redes</p>
+        <h1>Generador de Subredes</h1>
+      </div>
+      <div class="badge">🌐 IPv4</div>
+    </header>
+
+    <section class="marco principal">
+      <h2 class="titulo-marco">Panel de configuración</h2>
+
+      <div class="fila-superior">
+        <section class="panel panel-clase">
+          <h3><span>①</span> Clase de IP</h3>
+
+          <div class="aviso">Seleccione el rango que desea utilizar</div>
+
+          <div class="opciones">
+            <label><input type="radio" name="clase" value="A"> Clase A</label>
+            <label><input type="radio" name="clase" value="B"> Clase B</label>
+            <label><input type="radio" name="clase" value="C"> Clase C</label>
+          </div>
+        </section>
+
+        <section class="panel panel-ip">
+          <h3><span>②</span> Ingresar dirección IP</h3>
+
+          <div class="cajas-ip">
+            <input id="o1" class="octeto" maxlength="3" disabled placeholder="000">
+            <input id="o2" class="octeto" maxlength="3" disabled placeholder="000">
+            <input id="o3" class="octeto" maxlength="3" disabled placeholder="000">
+            <input id="o4" class="octeto" maxlength="3" disabled placeholder="000">
+          </div>
+
+          <button id="validar" class="btn btn-validar" disabled>
+            <span class="icono">✓</span>
+            Comprobar IP
+          </button>
+
+          <label class="lbl-subredes" for="cantidad">Número de subredes</label>
+          <input id="cantidad" class="cantidad" maxlength="4" disabled placeholder="Ej: 4">
+
+          <div class="botones">
+            <button id="generar" class="btn btn-generar" disabled>
+              <span class="icono">⚙</span>
+              Calcular
+            </button>
+            <button id="borrar" class="btn btn-borrar" disabled>
+              <span class="icono">↺</span>
+              Limpiar
+            </button>
+            <button id="salir" class="btn btn-salir">
+              <span class="icono">⌂</span>
+              Salir
+            </button>
+          </div>
+        </section>
+      </div>
+
+      <section class="panel panel-rango">
+        <h3><span>③</span> Rango de subredes</h3>
+
+        <div class="rango-contenido">
+          <div class="rango-bloque">
+            <label>Dirección inicial</label>
+            <textarea id="rangoInicial" readonly></textarea>
+          </div>
+
+          <div class="rango-bloque">
+            <label>Dirección final</label>
+            <textarea id="rangoFinal" readonly></textarea>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="marco resultados">
+      <h2 class="titulo-marco">Resultados generados</h2>
+
+      <div class="grid-resultados">
+        <div>
+          <h4>N. Red</h4>
+          <textarea id="listaNumero" readonly></textarea>
+        </div>
+
+        <div>
+          <h4>Dirección</h4>
+          <textarea id="listaDireccion" readonly></textarea>
+        </div>
+
+        <div>
+          <h4>Máscara</h4>
+          <textarea id="listaMascara" readonly></textarea>
+        </div>
+
+        <div>
+          <h4>Primera IP</h4>
+          <textarea id="listaPrimera" readonly></textarea>
+        </div>
+
+        <div>
+          <h4>Última IP</h4>
+          <textarea id="listaUltima" readonly></textarea>
+        </div>
+
+        <div>
+          <h4>Broadcast</h4>
+          <textarea id="listaBroadcast" readonly></textarea>
+        </div>
+
+        <div>
+          <h4>Gateway</h4>
+          <textarea id="listaPuerta" readonly></textarea>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
